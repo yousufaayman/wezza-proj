@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ venue.username }} - Details</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="/../static/css/venue_details.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="/">Home</a>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    </div>
+    <div class="navbar-right">
+      <img src="../static/images/logo.png" class="logo-large" alt="Logo">
+    </div>
+  </header>
+
+  <main class="venue-details">
+    <h1>{{ venue.username }}</h1>
+    <p><strong>Description:</strong> {{ venue.description }}</p>
+    <p><strong>Location:</strong> {{ venue.location }}</p>
+    <p><strong>Price:</strong> {{ venue.price }} EGP</p>
+
+    <img src="{{ venue.media }}" alt="Venue Image" style="width: 300px; border-radius: 10px;">
+
+    <div class="calendar">
+      <h3>Booking Calendar</h3>
+      <label for="calendar-input"><strong>Select Date:</strong></label>
+      <input type="text" id="calendar-input" placeholder="Select a date" />
+    </div>
+
+    <a href="/booking/" class="book-button">Book This Venue</a>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+    flatpickr("#calendar-input", {
+      minDate: "today",
+      dateFormat: "Y-m-d"
+    });
+  </script>
+
+</body>
+</html>

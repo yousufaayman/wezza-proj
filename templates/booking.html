@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Page</title>
+  <link rel="stylesheet" href="/../static/css/booking.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-left">
+      <a href="/home_page">Home</a>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    </div>
+    <div class="navbar-right">
+      <img src="../static/images/logo.png" alt="Logo" class="logo-large">
+    </div>
+  </header>
+
+  <main class="content">
+    <h1>Book Your Venue</h1>
+    <form class="booking-form">
+      <label for="venue">Venue Name</label>
+      <input type="text" id="venue" name="venue" value="Grand Palace" readonly>
+
+      <label for="date">Select Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </main>
+
+</body>
+</html>
