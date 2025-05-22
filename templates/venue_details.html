@@ -25,7 +25,8 @@
     <p><strong>Location:</strong> {{ venue.location }}</p>
     <p><strong>Price:</strong> {{ venue.price }} EGP</p>
 
-    <img src="{{ venue.media }}" alt="Venue Image" style="width: 300px; border-radius: 10px;">
+    {% set image_filename = venue.media.split('\\')[-1].split('/')[-1] %}
+    <img src="/static/images/venue/{{ image_filename }}" alt="Venue Image" style="width: 300px; border-radius: 10px;">
 
     <div class="calendar">
       <h3>Booking Calendar</h3>

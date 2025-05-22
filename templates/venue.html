@@ -9,7 +9,6 @@
 <body>
 
   <!-- Content Section -->
-   #YOUSUF
   <div class="content">
     <header class="navbar">
       <div class="navbar-left">
@@ -27,7 +26,8 @@
       <div class="service-list">
         {% for venue in venues %}
         <div class="service-card">
-          <img src="{{ venue.media }}" alt="{{ venue.username }}">
+          {% set image_filename = venue.media.split('\\')[-1].split('/')[-1] %}
+          <img src="/static/images/venue/{{ image_filename }}" alt="{{ venue.username }}">
           <h3>{{ venue.username }}</h3>
           <p>{{ venue.description }}</p>
           <a href="/venuedetails/{{ venue.username }}" class="book-button">View Details</a>        

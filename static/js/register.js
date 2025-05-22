@@ -29,8 +29,12 @@ function register(event) {
         if (document.getElementById('price'))
             bodyData.price = document.getElementById('price').value;
 
-        if (document.getElementById('media'))
-            bodyData.media = document.getElementById('media').value;
+        if (document.getElementById('media')) {
+            // Extract just the filename from the path
+            let fullPath = document.getElementById('media').value;
+            let filename = fullPath.split('\\').pop().split('/').pop();
+            bodyData.media = filename;
+        }
     }
 
     fetch('http://127.0.0.1:5001/register_user', {
